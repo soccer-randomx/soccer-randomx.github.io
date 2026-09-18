@@ -153,14 +153,144 @@
 </script>
 
 <style>
+    html, body {
+      margin: 5px;
+      padding: 5px;
+      font-family: Arial, sans-serif;
+      text-align: left;
+      min-height: 200vh;
+      transition: background 1s ease;
+      color: #fff;
+      
+    }
+
+
+
+    .grid-3 {
+  padding: 5px; /* Çok küçük boşluk */
+}
+
+    .game-item {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .game-item:hover {
+      transform: scale(1.1) rotate(1deg);
+      box-shadow: 0 12px 30px rgba(255,255,255,0.6);
+      z-index: 2;
+    }
+
+    
+
+    .list-thumbnail img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Genişlik ve yükseklik eşit: kare */
+    object-fit: cover;
+    display: block;
+    border-radius: 16px 16px 0 0;
+    height: auto; /* otomatik yükseklik */
+    }
+
+    
+    .list-title {
+      padding: 10px;
+      font-weight: bold;
+      color: #333;
+      font-size: 16px;
+    }
+
+    .container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;         /* Kenar boşluğunu kaldır */
+  padding: 0;        /* İç boşluk yok */
+  gap: 2;            /* Aradaki boşluk yok */
+}
+
+    h1 {
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 2px 2px 6px #000;
+      margin-bottom: 40px;
+    }
+
+/* Mobil: her satıra 2 kutu */
+.col-6 {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* Tablet: her satıra 3 kutu */
+@media (min-width: 768px) {
+  .col-md-4 {
+    width: 33.3333%;
+}
+
+/* Masaüstü: her satıra 6 kutu */
+@media (min-width: 992px) {
+  .col-lg-2 {
+    width: 16.6667%;
+}
+
+@media (max-width: 600px) {
+  .container {
+    gap: 10px;
+  }
+}
+
+.footer-copyright {
+  background: #111;
+  color: #ccc;
+  font-size: 14px;
+  padding: 10px 15px;
+}
+
+.footer-copyright .container {
+  display: flex;
+  justify-content: flex-end; /* Sağ tarafa yasla */
+  align-items: center;
+}
+
+.footer-copyright a {
+  color: #ccc;
+  text-decoration: none;
+  margin-left: 10px;
+  transition: color 0.3s;
+}
+
+.footer-copyright a:hover {
+  color: #fff;
+}
 .game-wrapper > .row {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
+
 #mainNav {
   margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
-</style>
+
+@media (max-width: 768px) {
+  body {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .container.game-wrapper,
+  .game-wrapper > .row,
+  .banner-ad-wrapper {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+  </style>
 
 </head>
 	<body id="page-top" style="background: url('images/background1.png'); background-size: cover;">
@@ -232,9 +362,7 @@
 
 
 
-<div class="container">
 
-<div class="row">
 
      <div class="banner-ad-wrapper" style="text-align:center; margin-bottom:20px;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3631337140289795"
@@ -257,23 +385,9 @@
 </div>
 
 
-      <div class="col-md-9">
-          	<div class="game-container">
-          		<div class="game-content" data-id="169">
-          			<div id="allow_mobile_version"></div>			
-               <!-- 
-                <div id="mobile-play" style="display: none;">
-          				<div class="mobile-thumb-play">
-          					<img src="#">
-          				</div>
-          				<div id="mobile-play-btn">
-          					<i class="bi bi-play-circle-fill"></i>
-          				</div>
-          			</div> -->
 
-
-
-          			<div class="game-iframe-container" id="game-player">
+<div id="allow_mobile_version">
+ <div class="game-iframe-container" id="game-player">
           				<div id="mobile-back-button" draggable="true">
           					<i class="bi bi-x-circle-fill"></i>
           				</div>
@@ -296,30 +410,15 @@
           					<a href="#" onclick="open_fullscreen()" class="btn btn-capsule"><i class="bi bi-arrows-fullscreen b-icon"></i>Fullscreen</a>
           				</div>
           			</div>
-          		</div>
-          	</div>
-
-      </div><!-- end col-9 -->
-      
-
-      <div class="col-md-3 ">
-
-        <div align="center">
-    
-
-        </div>
-      </div>
-
-
-
-  </div>
+                        </div>	
 
 
 
 
+<!-- end game unblocked -->
 
 
-	<div class="banner-ad-wrapper" style="text-align:center; margin:0 0 20px 0;">
+  <div class="banner-ad-wrapper" style="text-align:center; margin:0 0 20px 0;">
   <div style="font-size:small; font-style:italic; line-height:1; margin:0;">
     Advertisement
   </div>
@@ -339,295 +438,238 @@
   </script>
 </div>
 
-<!-- Random games section -->
-	<h3 class="section-title">Editor Games</h3>
-	<div class="row grid-container">
-
-
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-    <a href="/go-games/head-soccer-pro.html">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="https://img.gamemonetize.com/wmsy76khiwydfslcg1rv9d3km98id80a/512x512.jpg" data-src="https://img.gamemonetize.com/wmsy76khiwydfslcg1rv9d3km98id80a/512x512.jpg" class="small-thumb img-rounded lazyload" alt="Head Soccer Pro"></div>
-        <div class="list-info">
-          <div class="list-title">Head Soccer Pro</div>
-          <div class="list-category">Football</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-    <a href="/go-games/slope.html">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="https://77pen.github.io/img/slope.png" data-src="https://77pen.github.io/img/slope.png" class="small-thumb img-rounded lazyload" alt="slope"></div>
-        <div class="list-info">
-          <div class="list-title">Slope</div>
-          <div class="list-category">Skill</div>
-    
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-    <a href="/go-games/among-us.html">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="https://77pen.github.io/img/among-us.png" data-src="https://77pen.github.io/img/among-us.png" class="small-thumb img-rounded lazyload" alt="Among Us"></div>
-        <div class="list-info">
-          <div class="list-title">Among Us</div>
-          <div class="list-category">Action</div>   
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-    <a href="/go-games/basketball-stars.html">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="https://77pen.github.io/img/basketball-stars.png" data-src="https://77pen.github.io/img/basketball-stars.png" class="small-thumb img-rounded lazyload" alt="Basketball Stars"></div>
-        <div class="list-info">
-          <div class="list-title">Basketball Stars</div>
-          <div class="list-category">Sports</div>   
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-    <a href="/go-games/idle-ants.html">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="https://77pen.github.io/img/idle-ants.png" data-src="https://77pen.github.io/img/idle-ants.png" class="small-thumb img-rounded lazyload" alt="Idle Ants"></div>
-        <div class="list-info">
-          <div class="list-title">Idle Ants</div>
-          <div class="list-category">Skill</div>   
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-    <a href="/go-games/sausage-flip.html">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="https://77pen.github.io/img/sausage-flip.png" data-src="https://77pen.github.io/img/sausage-flip.png" class="small-thumb img-rounded lazyload" alt="Sausage Flip"></div>
-        <div class="list-info">
-          <div class="list-title">Sausage Flip</div>
-          <div class="list-category">Adventure</div>   
-        </div>
-      </div>
-    </div>
-    </a>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div><!-- end game unblocked -->
-
-
-
-
-
-
 
 
 	<!-- Popular games section -->
-	<h3 class="section-title">Popular games</h3>
+	<h2 class="section-title">Popular games</h2>
 	<div class="row grid-container">
 	
+<div class="col-lg-2 col-md-4 col-6 grid-3">
+    <a href="/go-games/soccer-hero.html">
+    <div class="game-item">
+      <div class="list-game">
+        <div class="list-thumbnail">
+<img src="https://img.gamemonetize.com/cl9ik2kgtk7kxt89jl9hr1dbzfxmv7k5/512x512.jpg" data-src="https://img.gamemonetize.com/cl9ik2kgtk7kxt89jl9hr1dbzfxmv7k5/512x512.jpg" class="lazyload" alt="Soccer Hero">
+       <div class="list-title" style="text-align:center;">Soccer Hero</div>
+    </div>
+    </div>
+  </div>
+  </a>
+</div>
 
-  <div class="col-lg-4 col-md-6 grid-2">
+<div class="col-lg-2 col-md-4 col-6 grid-3">
+    <a href="/go-games/soccer-skills-champions-league.html">
+    <div class="game-item">
+      <div class="list-game">
+        <div class="list-thumbnail">
+<img src="https://77pen.github.io/img/soccer-skills-champions-league.png" data-src="https://77pen.github.io/img/soccer-skills-champions-league.png" class="lazyload" alt="Soccer Skills Champions League">
+       <div class="list-title" style="text-align:center;">Soccer Skills Champions League</div>
+    </div>
+    </div>
+  </div>
+  </a>
+</div>
+
+<div class="col-lg-2 col-md-4 col-6 grid-3">
+    <a href="/go-games/soccer-skills-euro-cup.html">
+    <div class="game-item">
+      <div class="list-game">
+        <div class="list-thumbnail">
+<img src="https://77pen.github.io/img/soccer-skills-euro-cup.png" data-src="https://77pen.github.io/img/soccer-skills-euro-cup.png" class="lazyload" alt="Soccer Skills Euro Cup">
+       <div class="list-title" style="text-align:center;">Soccer Skills Euro Cup</div>
+    </div>
+    </div>
+  </div>
+  </a>
+</div>
+
+<div class="col-lg-2 col-md-4 col-6 grid-3">
+    <a href="/go-games/soccer-skills-world-cup.html">
+    <div class="game-item">
+      <div class="list-game">
+        <div class="list-thumbnail"><img src="https://77pen.github.io/img/soccer-skills-world-cup.png" data-src="https://77pen.github.io/img/soccer-skills-world-cup.png" class="lazyload" alt="Soccer Skills World Cup">
+        <div class="list-title" style="text-align:center;">Soccer Skills World Cup</div>
+    </div>
+    </div>
+  </div>
+  </a>
+</div>
+
+<div class="col-lg-2 col-md-4 col-6 grid-3">
+    <a href="/go-games/football-legends.html">
+    <div class="game-item">
+      <div class="list-game">
+        <div class="list-thumbnail"><img src="https://77pen.github.io/img/football-legends.png" data-src="https://77pen.github.io/img/football-legends.png" class="lazyload" alt="Football Legends">
+        <div class="list-title" style="text-align:center;">Football Legends</div>
+    </div>
+    </div>
+  </div>
+  </a>
+</div>
+
+<div class="col-lg-2 col-md-4 col-6 grid-3">
+    <a href="/go-games/football-masters.html">
+    <div class="game-item">
+      <div class="list-game">
+        <div class="list-thumbnail"><img src="https://77pen.github.io/img/football-masters.png" data-src="https://77pen.github.io/img/football-masters.png" class="lazyload" alt="Football Masters">
+        <div class="list-title" style="text-align:center;">Football Masters</div>
+    </div>
+    </div>
+  </div>
+  </a>
+</div>
+
+<div class="col-lg-2 col-md-4 col-6 grid-3">
+    <a href="/go-games/foot-chinko.html">
+    <div class="game-item">
+      <div class="list-game">
+        <div class="list-thumbnail"><img src="https://77pen.github.io/img/foot-chinko.png" data-src="https://77pen.github.io/img/foot-chinko.png" class="lazyload" alt="Foot Chinko">
+        <div class="list-title" style="text-align:center;">Foot Chinko</div>
+    </div>
+    </div>
+  </div>
+  </a>
+</div>
+
+  <div class="col-lg-2 col-md-4 col-6 grid-3">
     <a href="/go-games/1-on-1-soccer.html">
     <div class="game-item">
       <div class="list-game">
-        <div class="list-thumbnail"><img src="https://img.gamemonetize.com/9mj80xfti37ayutvlybw5seqgllgs690/512x512.jpg" data-src="https://img.gamemonetize.com/9mj80xfti37ayutvlybw5seqgllgs690/512x512.jpg" class="small-thumb img-rounded lazyload" alt="1 On 1 Soccer"></div>
-        <div class="list-info">
-          <div class="list-title">1 On 1 Soccer</div>
-          <div class="list-category">Football</div>
-        </div>
-      </div>
+        <div class="list-thumbnail">
+<img src="https://img.gamemonetize.com/9mj80xfti37ayutvlybw5seqgllgs690/512x512.jpg" data-src="https://img.gamemonetize.com/9mj80xfti37ayutvlybw5seqgllgs690/512x512.jpg" class="lazyload" alt="1 On 1 Soccer">
+       <div class="list-title" style="text-align:center;">1 On 1 Soccer</div>
     </div>
-    </a>
+    </div>
   </div>
+  </a>
+</div>
 
-  <div class="col-lg-4 col-md-6 grid-2">
+
+
+  <div class="col-lg-2 col-md-4 col-6 grid-3">
     <a href="/go-games/moto-x3m-winter">
     <div class="game-item">
       <div class="list-game">
-        <div class="list-thumbnail"><img src="https://77pen.github.io/img/moto-x3m-winter.png" data-src="https://77pen.github.io/img/moto-x3m-winter.png" class="small-thumb img-rounded lazyload" alt="Moto X3m Winter"></div>
-        <div class="list-info">
-          <div class="list-title">Moto X3m Winter</div>
-          <div class="list-category">Racing</div>
-        </div>
-      </div>
+        <div class="list-thumbnail">
+<img src="https://77pen.github.io/img/moto-x3m-winter.png" data-src="https://77pen.github.io/img/moto-x3m-winter.png" class="lazyload" alt="Moto X3m Winter">
+        <div class="list-title" style="text-align:center;">Moto X3m Winter</div>
     </div>
-    </a>
+    </div>
   </div>
+  </a>
+</div>
 
-  <div class="col-lg-4 col-md-6 grid-2">
+  <div class="col-lg-2 col-md-4 col-6 grid-3">
     <a href="/go-games/moto-road-rash-3d">
     <div class="game-item">
       <div class="list-game">
-        <div class="list-thumbnail"><img src="https://77pen.github.io/img/moto-road-rash-3d.png" data-src="https://77pen.github.io/img/moto-road-rash-3d.png" class="small-thumb img-rounded lazyload" alt="Moto Road Rash 3D"></div>
-        <div class="list-info">
-          <div class="list-title">Moto Road Rash 3D</div>
-          <div class="list-category">Racing</div>
-        </div>
-      </div>
+        <div class="list-thumbnail">
+<img src="https://77pen.github.io/img/moto-road-rash-3d.png" data-src="https://77pen.github.io/img/moto-road-rash-3d.png" class="lazyload" alt="Moto Road Rash 3D">
+        <div class="list-title" style="text-align:center;">Moto Road Rash 3D</div>
     </div>
-    </a>
+    </div>
   </div>
+  </a>
+</div>
 
-  <div class="col-lg-4 col-md-6 grid-2">
+  <div class="col-lg-2 col-md-4 col-6 grid-3">
     <a href="/go-games/merge-cyber-racers">
     <div class="game-item">
       <div class="list-game">
-        <div class="list-thumbnail"><img src="https://77pen.github.io/img/merge-cyber-racers.png" data-src="https://77pen.github.io/img/merge-cyber-racers.png" class="small-thumb img-rounded lazyload" alt="Merge Cyber Racers"></div>
-        <div class="list-info">
-          <div class="list-title">Merge Cyber Racers</div>
-          <div class="list-category">Racing</div>
-        </div>
-      </div>
+        <div class="list-thumbnail">
+<img src="https://77pen.github.io/img/merge-cyber-racers.png" data-src="https://77pen.github.io/img/merge-cyber-racers.png" class="lazyload" alt="Merge Cyber Racers">
+         <div class="list-title" style="text-align:center;">Merge Cyber Racers</div>
     </div>
-    </a>
+    </div>
   </div>
+  </a>
+</div>
 
-  <div class="col-lg-4 col-md-6 grid-2">
+  <div class="col-lg-2 col-md-4 col-6 grid-3">
     <a href="/go-games/snow-rider-3d">
     <div class="game-item">
       <div class="list-game">
-        <div class="list-thumbnail"><img src="https://77pen.github.io/img/snow-rider-3d.png" data-src="https://77pen.github.io/img/snow-rider-3d.png" class="small-thumb img-rounded lazyload" alt="Snow Rider 3D"></div>
-        <div class="list-info">
-          <div class="list-title">Snow Rider 3D</div>
-          <div class="list-category">Sports</div>
-        </div>
-      </div>
+        <div class="list-thumbnail">
+<img src="https://77pen.github.io/img/snow-rider-3d.png" data-src="https://77pen.github.io/img/snow-rider-3d.png" class="lazyload" alt="Snow Rider 3D">
+        <div class="list-title" style="text-align:center;">Snow Rider 3D</div>
     </div>
-    </a>
+    </div>
   </div>
+  </a>
+</div>
 
-  <div class="col-lg-4 col-md-6 grid-2">
+  <div class="col-lg-2 col-md-4 col-6 grid-3">
     <a href="/go-games/eugenes-life">
     <div class="game-item">
       <div class="list-game">
-        <div class="list-thumbnail"><img src="https://77pen.github.io/img/eugenes-life.png" data-src="https://77pen.github.io/img/eugenes-life.png" class="small-thumb img-rounded lazyload" alt="Eugenes Life"></div>
-        <div class="list-info">
-          <div class="list-title">Eugenes Life</div>
-          <div class="list-category">Adventure</div>
-        </div>
-      </div>
+        <div class="list-thumbnail"><img src="https://77pen.github.io/img/eugenes-life.png" data-src="https://77pen.github.io/img/eugenes-life.png" class="lazyload" alt="Eugenes Life">
+        <div class="list-title" style="text-align:center;">Eugenes Life</div>
     </div>
-    </a>
+    </div>
   </div>
+  </a>
+</div>
 
-  <div class="col-lg-4 col-md-6 grid-2">
+  <div class="col-lg-2 col-md-4 col-6 grid-3">
     <a href="/go-games/1v1-lol">
     <div class="game-item">
       <div class="list-game">
-        <div class="list-thumbnail"><img src="https://77pen.github.io/img/1v1-lol.png" data-src="https://77pen.github.io/img/1v1-lol.png" class="small-thumb img-rounded lazyload" alt="1v1 Lol"></div>
-        <div class="list-info">
-          <div class="list-title">1v1 Lol</div>
-          <div class="list-category">Shooting</div>
-        </div>
-      </div>
+        <div class="list-thumbnail"><img src="https://77pen.github.io/img/1v1-lol.png" data-src="https://77pen.github.io/img/1v1-lol.png" class="lazyload" alt="1v1 Lol">
+       <div class="list-title" style="text-align:center;">1v1 Lol</div>
     </div>
-    </a>
+    </div>
   </div>
+  </a>
+</div>
 
-  <div class="col-lg-4 col-md-6 grid-2">
+  <div class="col-lg-2 col-md-4 col-6 grid-3">
     <a href="/go-games/tunnel-rush">
     <div class="game-item">
       <div class="list-game">
-        <div class="list-thumbnail"><img src="https://77pen.github.io/img/tunnel-rush.png" data-src="https://77pen.github.io/img/tunnel-rush.png" class="small-thumb img-rounded lazyload" alt="Tunnel Rush"></div>
-        <div class="list-info">
-          <div class="list-title">Tunnel Rush</div>
-          <div class="list-category">for Girls</div>
-        </div>
-      </div>
+        <div class="list-thumbnail"><img src="https://77pen.github.io/img/tunnel-rush.png" data-src="https://77pen.github.io/img/tunnel-rush.png" class="lazyload" alt="Tunnel Rush">
+        <div class="list-title" style="text-align:center;">Tunnel Rush</div>
     </div>
-    </a>
-  </div>
-
-  <div class="col-lg-4 col-md-6 grid-2">
-    <a href="/go-games/soccer-skills-world-cup">
-    <div class="game-item">
-      <div class="list-game">
-        <div class="list-thumbnail"><img src="https://77pen.github.io/img/soccer-skills-world-cup.png" data-src="https://77pen.github.io/img/soccer-skills-world-cup.png" class="small-thumb img-rounded lazyload" alt="Soccer Skills World Cup"></div>
-        <div class="list-info">
-          <div class="list-title">Soccer Skills World Cup</div>
-          <div class="list-category">Sports</div>
-        </div>
-      </div>
     </div>
-    </a>
   </div>
+  </a>
+</div>
 
-  <div class="col-lg-4 col-md-6 grid-2">
+  
+  <div class="col-lg-2 col-md-4 col-6 grid-3">
     <a href="/go-games/getaway-shootout">
     <div class="game-item">
       <div class="list-game">
-        <div class="list-thumbnail"><img src="https://77pen.github.io/img/getaway-shootout.png" data-src="https://77pen.github.io/img/getaway-shootout.png" class="small-thumb img-rounded lazyload" alt="Getaway Shootout"></div>
-        <div class="list-info">
-          <div class="list-title">Getaway Shootout</div>
-          <div class="list-category">Action</div>
-        </div>
-      </div>
+        <div class="list-thumbnail"><img src="https://77pen.github.io/img/getaway-shootout.png" data-src="https://77pen.github.io/img/getaway-shootout.png" class="lazyload" alt="Getaway Shootout">
+       <div class="list-title" style="text-align:center;">Getaway Shootout</div>
     </div>
-    </a>
+    </div>
   </div>
+  </a>
+</div>
 
-  <div class="col-lg-4 col-md-6 grid-2">
+  <div class="col-lg-2 col-md-4 col-6 grid-3">
     <a href="/go-games/merge-round-racers">
     <div class="game-item">
       <div class="list-game">
-        <div class="list-thumbnail"><img src="https://77pen.github.io/img/merge-round-racers.png" data-src="https://77pen.github.io/img/merge-round-racers.png" class="small-thumb img-rounded lazyload" alt="Merge Round Racers"></div>
-        <div class="list-info">
-          <div class="list-title">Merge Round Racers</div>
-          <div class="list-category">Racing</div>
-        </div>
-      </div>
+        <div class="list-thumbnail"><img src="https://77pen.github.io/img/merge-round-racers.png" data-src="https://77pen.github.io/img/merge-round-racers.png" class="lazyload" alt="Merge Round Racers">
+        <div class="list-title" style="text-align:center;">Merge Round Racers</div>
     </div>
-    </a>
+    </div>
   </div>
+  </a>
+</div>
 
-  <div class="col-lg-4 col-md-6 grid-2">
+  <div class="col-lg-2 col-md-4 col-6 grid-3">
     <a href="/go-games/retro-bowl">
     <div class="game-item">
       <div class="list-game">
-        <div class="list-thumbnail"><img src="https://77pen.github.io/img/retro-bowl.png" data-src="https://77pen.github.io/img/retro-bowl.png" class="small-thumb img-rounded lazyload" alt="Retro Bowl"></div>
-        <div class="list-info">
-          <div class="list-title">Retro Bowl</div>
-          <div class="list-category">Sports</div>
-        </div>
-      </div>
+        <div class="list-thumbnail"><img src="https://77pen.github.io/img/retro-bowl.png" data-src="https://77pen.github.io/img/retro-bowl.png" class="lazyload" alt="Retro Bowl">
+        <div class="list-title" style="text-align:center;">Retro Bowl</div>
     </div>
-    </a>
+    </div>
   </div>
+  </a>
+</div>
 
 </div><!-- end game unblocked -->
 
@@ -1337,18 +1379,7 @@
   </div>
   </a>
 </div>
-<div class="col-lg-2 col-md-4 col-6 grid-3">
-  <a href="/go-games/soccer-skills-champions-league.html">
-  <div class="game-item">
-    <div class="list-game">
-      <div class="list-thumbnail">
-      <img src="https://77pen.github.io/img/soccer-skills-champions-league.png" data-src="https://77pen.github.io/img/soccer-skills-champions-league.png" class="lazyload" alt="Soccer Skills Champions League">
-      <div class="list-title" style="text-align:center;">Soccer Skills Champions League</div>
-    </div>
-    </div>
-  </div>
-  </a>
-</div>
+
 <div class="col-lg-2 col-md-4 col-6 grid-3">
   <a href="/go-games/city-car-driving-stunt-master.html">
   <div class="game-item">
@@ -1838,7 +1869,7 @@
 
 
 <article>
-  <h1>Soccer Random Unblocked – Play the Funniest Football Game Online</h1>
+  <h2>Soccer Random Unblocked – Play the Funniest Football Game Online</h2>
 
   <p><strong>Soccer Random Unblocked</strong> is a hilarious and chaotic football game where every match feels totally different! Created by the developer <em>RHM Interactive</em>, this game turns soccer into a wild physics-based adventure. Whether you’re playing solo or with a friend, every kick, jump, and goal is unpredictable and fun. Play <a href="https://soccer-randomx.github.io/" target="_blank">Soccer Random Unblocked</a> online for free and experience the craziest soccer matches ever!</p>
 
@@ -1918,5 +1949,42 @@
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 	<script type="text/javascript" src="js/custom.js"></script>
+
+<script>
+
+const soccerrandomColors = [
+  '#00FF87', // Neon green — saha / enerji
+  '#00B4D8', // Electric blue — boost / glow
+  '#FFD60A', // Golden yellow — top / coin
+  '#FF4D6D', // Hot pink-red — opponent / highlight
+  '#7B2CBF', // Purple — special effect
+  
+];
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const windowHeight = document.body.scrollHeight - window.innerHeight;
+    const scrollRatio = scrollY / windowHeight;
+    const colorIndex = Math.floor(scrollRatio * (soccerrandomColors.length - 1));
+    const nextColorIndex = Math.min(colorIndex + 1, soccerrandomColors.length - 1);
+    const mixRatio = (scrollRatio * (soccerrandomColors.length - 1)) % 1;
+
+    const blend = (start, end, ratio) => {
+      const s = parseInt(start.slice(1), 16);
+      const e = parseInt(end.slice(1), 16);
+      const r = Math.round(((s >> 16) & 0xff) * (1 - ratio) + ((e >> 16) & 0xff) * ratio);
+      const g = Math.round(((s >> 8) & 0xff) * (1 - ratio) + ((e >> 8) & 0xff) * ratio);
+      const b = Math.round((s & 0xff) * (1 - ratio) + (e & 0xff) * ratio);
+      return `rgb(${r}, ${g}, ${b})`;
+    };
+
+    const bgColor = blend(soccerrandomColors[colorIndex], soccerrandomColors[nextColorIndex], mixRatio);
+    document.body.style.background = bgColor;
+  });
+
+  // Sayfa yüklenince renk hesapla
+  window.dispatchEvent(new Event('scroll'));
+</script>
+
 	  </body>
 </html>
